@@ -26,3 +26,6 @@ function divi(num1,num2){
 }
 let output3 = divi(1,200)
 console.log(output3)
+
+let num1 = document.getElementsByTagName("button")
+let num2 = document.getElementsByTagName("button")
