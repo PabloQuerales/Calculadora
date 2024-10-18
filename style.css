@@ -1,0 +1,53 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.conteiner {
+	width: 50%;
+	height: 50%;
+	display: flex;
+	margin: auto;
+	flex-direction: column;
+	background-color: gray;
+	border-radius: 1rem;
+	margin-top: 1rem;
+	padding: 1rem;
+	gap: 1rem;
+}
+.display {
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	color: greenyellow;
+	height: 2rem;
+	background-color: rgb(85, 85, 85);
+	width: 90%;
+	margin: auto;
+}
+.keybord {
+	display: flex;
+	flex-wrap: wrap;
+}
+button {
+	padding: 2rem;
+	border-radius: 10%;
+	width: 5rem;
+	height: 5rem;
+	margin: 0.3rem;
+	margin-left: 0;
+}
+.simbols {
+	width: 25%;
+}
+.simbols button {
+	background-color: aquamarine;
+}
+.numbers {
+	display: flex;
+	justify-content: end;
+	flex-wrap: wrap;
+	width: 75%;
+}
+.numbers :nth-last-child(-n + 2) {
+	background-color: brown;
+}
