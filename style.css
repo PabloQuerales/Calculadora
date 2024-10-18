@@ -3,8 +3,7 @@
 	padding: 0;
 }
 .conteiner {
-	width: 50%;
-	height: 50%;
+	width: 25%;
 	display: flex;
 	margin: auto;
 	flex-direction: column;
