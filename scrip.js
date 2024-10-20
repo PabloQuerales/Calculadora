@@ -30,10 +30,13 @@ console.log(output3)
 
 
 let num2 = document.getElementById("keyboard-id")
-num2.addEventListener("click",impr)
 let n1 = ""
-function impr (e) {
+num2.addEventListener("click",(e)=>{
   n1 = e.target.textContent
   return n1
-}
+})
 
+num2.addEventListener("click",(e)=>{
+  n1++
+console.log(n1)
+})
