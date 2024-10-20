@@ -1,6 +1,6 @@
 // Función encargada de la SUMA
-function sum(num1,num2){
-  let result = num1 + num2
+function sum(impr,impr){
+  let result = impr + impr
   return result
 }
 let output = sum(1,200)
@@ -27,5 +27,13 @@ function divi(num1,num2){
 let output3 = divi(1,200)
 console.log(output3)
 
-let num1 = document.getElementsByTagName("button")
-let num2 = document.getElementsByTagName("button")
+
+
+let num2 = document.getElementById("keyboard-id")
+num2.addEventListener("click",impr)
+let n1 = ""
+function impr (e) {
+  n1 = e.target.textContent
+  return n1
+}
+
