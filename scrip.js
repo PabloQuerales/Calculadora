@@ -29,14 +29,27 @@ console.log(output3)
 
 
 
+
+
+
+
+
+
+
+
 let num2 = document.getElementById("keyboard-id")
-let n1 = ""
+
+let n1 = []
 num2.addEventListener("click",(e)=>{
-  n1 = e.target.textContent
+  n1.push(e.target.textContent)
   return n1
 })
 
 num2.addEventListener("click",(e)=>{
-  n1++
 console.log(n1)
 })
+console.log()
+for (let i = 0; i < n1.length; i++) {
+  const element = array[i];
+  return element
+}
