@@ -13,6 +13,6 @@ keyboardId.addEventListener("click",(e)=>{
 })
 function concatenar () {
   for (let i = 0; i < n1.length; i++) {
-    console.log("HolaMundo")
+    console.log(n1[0]+n1[1]+n1[2]+n1[3])
   }
 }
