@@ -1,12 +1,12 @@
-let num2 = document.getElementById("keyboard-id")
+let keyboardId = document.querySelector("#keyboard-id")
 
 let n1 = []
-num2.addEventListener("click",(e)=>{
+keyboardId.addEventListener("click",(e)=>{
   n1.push(e.target.textContent)
   return n1
 })
 
-num2.addEventListener("click",(e)=>{
-  let number = ""
+keyboardId.addEventListener("click",(e)=>{
+  let number = n1
   console.log(number)
 })
