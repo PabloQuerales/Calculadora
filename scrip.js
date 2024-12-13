@@ -4,21 +4,26 @@ let display = document.querySelector("p")
 let n1 = []
 // let n2 = []
 // let result = []
+let generatedWord = ""
 
+function sumar(n1,n2) {
+  let resultado = n1+n2
+  parseInt(resultado)
+  return resultado
+}
+let paso1 = []
+let paso2 = ["20","30","20"]
+let paso3 = paso2[0]+paso2[1]+paso2[2]
+let paso4 = parseInt(paso3)
+contador = ""
+console.log(sumar(paso4,paso4));
+let index = 0
 for (let i = 0; i < keyboardId.length; i++) {
   keyboardId[i].addEventListener("click",(e)=>{
-    n1.push(e.target.textContent)
-    display.textContent = n1
-    console.log(n1)
-    console.log("hola")
-    // if (condition) {
-    // }
-    // concatenar()
+    paso1.push(e.target.textContent)
+  for (let index = 0; index < paso1.length; index++) {
+    console.log(index)
+    contador = contador + paso1[index]
+	}
   })
 }
-// function concatenar () {
-//   for (let i = 0; i < n1.length; i++) {
-//     console.log(n1[0]+n1[1]+n1[2]+n1[3])
-//   }
-// }
-
