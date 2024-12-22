@@ -1,9 +1,10 @@
 let numberButtons = document.querySelectorAll(".number-buttons")
-let display = document.querySelector("spam")
+let displayNumber = document.querySelector(".display-number")
+let displayOperator = document.querySelector(".display-operator")
 
 let n1 = []
 let n2 = []
-let result = []
+let result = n1 + n2
 
 
 for (let i = 0; i < numberButtons.length; i++) {
@@ -12,8 +13,18 @@ for (let i = 0; i < numberButtons.length; i++) {
     n1.push(e.target.textContent)
     for (let i = 0; i < n1.length; i++) {
       number = number + n1[i]
-      display.textContent = number
-      }
+      displayNumber.textContent = number
+    }
+    if (e.target.textContent == "+") {
+      console.log("funciona")
+      console.log(number);
+      n1 = []
+      displayOperator.textContent = "+"
+      console.log(number);
+        return n1
+    }
+    console.log(number);
+    
   })
 }
 

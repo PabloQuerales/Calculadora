@@ -16,7 +16,7 @@
 }
 .display {
 	display: flex;
-	justify-content: end;
+	justify-content: space-between;
 	align-items: center;
 	color: greenyellow;
 	height: 4rem;
@@ -25,10 +25,9 @@
 	margin: auto;
 	box-shadow: 0.1rem 0.1rem black;
 	border-radius: 0.6rem;
+	padding: 0 15px 0 15px;
 }
-.display p {
-	padding: 1rem;
-}
+
 .keyboard {
 	display: flex;
 	flex-wrap: wrap;
