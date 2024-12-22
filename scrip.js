@@ -1,4 +1,5 @@
 let numberButtons = document.querySelectorAll(".number-buttons")
+let operatorButtons = document.querySelectorAll(".operator-button")
 let displayNumber = document.querySelector(".display-number")
 let displayOperator = document.querySelector(".display-operator")
 
@@ -15,16 +16,23 @@ for (let i = 0; i < numberButtons.length; i++) {
       number = number + n1[i]
       displayNumber.textContent = number
     }
-    if (e.target.textContent == "+") {
-      console.log("funciona")
-      console.log(number);
-      n1 = []
-      displayOperator.textContent = "+"
-      console.log(number);
-        return n1
-    }
-    console.log(number);
-    
+    for (let i = 0; i < operatorButtons.length; i++){
+      operatorButtons[i].addEventListener("click", (e)=>{
+        if (e.target.textContent == "+") {
+          n1 = []          
+          number= 0
+          displayOperator.textContent = e.target.textContent
+        }
+        if(e.target.textContent == "-"){
+          displayOperator.textContent = e.target.textContent
+        }
+          if(e.target.textContent == "*"){
+          displayOperator.textContent = e.target.textContent
+        }
+          if(e.target.textContent == "%"){
+          displayOperator.textContent = e.target.textContent
+        }
+      })
+    }      
   })
 }
-
