@@ -1,15 +1,22 @@
 let numberButtons = document.querySelectorAll(".number-buttons")
-let additionButton = document.querySelector(".addition-button")
-let subtractionButton = document.querySelector(".subtraction-button")
-let multiplicationButton = document.querySelector(".multiplication-button")
-let divisionButton = document.querySelector(".division-button")
+let operatorButton = document.querySelectorAll(".operator-button")
 let equalButton = document.querySelector(".equal-button")
 let displayNumber = document.querySelector(".display-number")
 let displayOperator = document.querySelector(".display-operator")
 let displaySimbolOperator = document.querySelector(".display-simbol-operator")
 
 let n1 = []
-let n2 = []
+
+function resetDisplay (){
+  displayOperator.textContent = ""
+  displaySimbolOperator.textContent = ""
+  n1 = []
+} 
+function resetCounter(){
+  displayOperator.textContent = displayNumber.textContent
+  displayNumber.textContent = "0"
+  n1 = []
+}
 
 for (let i = 0; i < numberButtons.length; i++) {
   numberButtons[i].addEventListener("click",(e)=>{
@@ -21,43 +28,64 @@ for (let i = 0; i < numberButtons.length; i++) {
     }
   })
 }
-// FUNCION DE SUMAR
-additionButton.addEventListener("click", (e)=>{
-  if(displayOperator.textContent == ""){
-    displaySimbolOperator.textContent = e.target.textContent
-    displayOperator.textContent = displayNumber.textContent
-    displayNumber.textContent = "0"
-    n1 = []
-    equalButton.addEventListener("click", ()=>{
-      displayNumber.textContent = Number(displayOperator.textContent)+Number(displayNumber.textContent)
-      displayOperator.textContent = ""
-      displaySimbolOperator.textContent = ""
-      n1 = []
-    })
-  } else {
-      displaySimbolOperator.textContent = e.target.textContent
-      displayOperator.textContent = Number(displayOperator.textContent)+Number(displayNumber.textContent)
-      displayNumber.textContent = "0"
-      n1 = []
-  }
-  })   
-// FUNCION DE RESTAR
-subtractionButton.addEventListener("click", (e)=>{
-  if(displayOperator.textContent == ""){
-    displaySimbolOperator.textContent = e.target.textContent
-    displayOperator.textContent = displayNumber.textContent
-    displayNumber.textContent = "0"
-    n1 = []
-    equalButton.addEventListener("click", ()=>{
-      displayNumber.textContent = Number(displayOperator.textContent)-Number(displayNumber.textContent)
-      displayOperator.textContent = ""
-      displaySimbolOperator.textContent = ""
-      n1 = []
-    })
-  } else {
-      displaySimbolOperator.textContent = e.target.textContent
-      displayOperator.textContent = Number(displayOperator.textContent)-Number(displayNumber.textContent)
-      displayNumber.textContent = "0"
-      n1 = []
-  }
-})
+
+for (let i = 0; i < operatorButton.length; i++) {
+  operatorButton[i].addEventListener("click", (e)=>{
+    displaySimbolOperator.textContent= operatorButton[i].textContent
+    if(operatorButton[i].textContent == "+"){
+      if (displayOperator.textContent == "") {
+        resetCounter()
+        equalButton.addEventListener("click", ()=>{
+          displayNumber.textContent = Number(displayOperator.textContent)+Number(displayNumber.textContent)
+          resetDisplay()
+        })        
+      } else {
+          displaySimbolOperator.textContent = e.target.textContent
+          displayOperator.textContent = Number(displayOperator.textContent)+Number(displayNumber.textContent)
+          resetCounter()
+      }
+    }
+    if(operatorButton[i].textContent == "-"){
+      if (displayOperator.textContent == "") {
+        displayOperator.textContent = displayNumber.textContent
+        resetCounter()
+        equalButton.addEventListener("click", ()=>{
+          displayNumber.textContent = Number(displayOperator.textContent)-Number(displayNumber.textContent)
+          resetDisplay()
+        })        
+      } else {
+          displaySimbolOperator.textContent = e.target.textContent
+          displayOperator.textContent = Number(displayOperator.textContent)-Number(displayNumber.textContent)
+          resetCounter()
+      }
+    }
+    if(operatorButton[i].textContent == "*"){
+      if (displayOperator.textContent == "") {
+        displayOperator.textContent = displayNumber.textContent
+        resetCounter()
+        equalButton.addEventListener("click", ()=>{
+          displayNumber.textContent = Number(displayOperator.textContent)*Number(displayNumber.textContent)
+          resetDisplay()
+        })        
+      } else {
+          displaySimbolOperator.textContent = e.target.textContent
+          displayOperator.textContent = Number(displayOperator.textContent)*Number(displayNumber.textContent)
+          resetCounter()
+      }
+    }
+    if(operatorButton[i].textContent == "/"){
+      if (displayOperator.textContent == "") {
+        displayOperator.textContent = displayNumber.textContent
+        resetCounter()
+        equalButton.addEventListener("click", ()=>{
+          displayNumber.textContent = Number(displayOperator.textContent)/Number(displayNumber.textContent)
+          resetDisplay()
+        })        
+      } else {
+          displaySimbolOperator.textContent = e.target.textContent
+          displayOperator.textContent = Number(displayOperator.textContent)/Number(displayNumber.textContent)
+          resetCounter()
+      }
+    }
+  })
+}
